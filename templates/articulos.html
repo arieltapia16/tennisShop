@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-2">
+    <p>
+      <label for="art">Filtro</label>
+      <select id="art" ng-model="seleccion"   ng-options="tipo as tipo.id for tipo in tipos">
+      </select>
+    </p>
+
+  </div>
+
+  <div class="col-md-8">
+    <table  class="table table-stiped" >
+      <!-- <tr>
+        <td></td>
+        <td>Nombre</td>
+        <td>Marca</td>
+        <td>Precio</td>
+        <td>Stock</td>
+        <td>{{depo}}</td>
+      </tr> -->
+      <tr ng-show="producto.stock > valor && producto.deporte === depo && producto.nombre === nombre"
+         ng-repeat="producto in productos | orderBy :seleccion.id" 	 >
+        <td ><img ng-src="img/art/{{producto.imagen}}" alt="" /></td>
+        <td><div class="align">{{producto.nombre}}</div></td>
+        <td><div class="align">{{producto.marca}}</div></td>
+        <td><div class="align">{{producto.precio | currency}}</div></td>
+        <!-- <td><div class="align">{{producto.stock}}</div></td> -->
+        <td><div class="align">{{producto.deporte}}</div></td>
+      </tr>
+    </table>
+  </div>
+</div>

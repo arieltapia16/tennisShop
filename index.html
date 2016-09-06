@@ -1,0 +1,37 @@
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Tennis Shop</title>
+	<script src="./bower_components/angular/angular.min.js"></script>
+
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js">
+
+	</script>
+	<script src="app.js"></script>
+	<!-- <link rel="stylesheet" href="bower_components/lumx/dist/lumx.css"> -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/personal.css">
+</head>
+<body>
+<div class="container-fluid">
+	<div class="col-md-3">
+		<ng-include src="'header.html'" ></ng-include>
+	</div>
+	<div class="col-md-9 sideLeft">
+		<ui-view></ui-view>
+	<div class="col-md-12">
+		<ng-include src="'offers.html'" ></ng-include>
+	</div>
+	</div>
+</div>
+<div class="footer">
+	<ng-include src="'footer.html'" ></ng-include>
+</div>
+	<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- <script src="bower_components/bootstrap/dist/js/personal.js"></script> -->
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+.fOpen{
+font-family: 'Open Sans', 'Helvetica';
+}
+/*configuracion barra*/
+.navbar-personal{
+background-color: none;
+border-radius: 0px;
+height: 100px;
+font-weight: 800;
+
+z-index: 10;
+padding-top: 20px;
+}
+.navbar-personal a{
+	color: grey;
+}
+.brand{
+	font-size: 30px;
+}
+.nav li a:focus, .nav li a:hover, .brand:hover{
+	border-radius: 5px;
+	color: #4C9EF0;
+}
+/*FIN configuracion barra*/
+
+/*configuracion carousel*/
+.carousel-inner .item img{
+	height: 300px;
+	padding-left: 40%;
+}
+.carousel {
+	margin-top: -20px;
+	margin-bottom: 40px;
+	box-shadow: 10px 10px 5px  #888888;
+}
+	/*Caption central*/
+	.captionPs{
+		position: absolute;
+		left: 10%;
+		top: 20%;
+		color: #fafafa;
+		font-weight: 800;
+		font-size: 70px;
+		font-style: italic;
+		text-shadow: 2px 2px #000;
+		}
+
+	/*Fin Caption central*/
+
+/*FIN configuracion carousel*/
+
+/*configuracion celdas*/
+	.table tbody tr td {
+		text-align:center;
+	}
+
+	.table tbody tr td img{
+		height: 100px;
+	}
+	.align{
+		margin-top: 40px;
+	}
+/*FIN configuracion celdas*/
+
+/*Configuracion Offers*/
+	.thumbnail img{
+		height: 150px;
+	}
+/*FIN Configuracion Offers*/
+
+/*Configuracion sideLeft*/
+	.sideLeft{
+		margin-top: 70px;
+	}
+/*Configuracion sideLeft*/
+
+/*Footer*/
+.footer{
+	padding: 40px;
+	width: 100%;
+	background-color:  #4C9EF0;
+	color: white;
+	font-weight: 600;
+
+}
+/*FIN Footer*/

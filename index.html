@@ -4,27 +4,21 @@
 	<title>Tennis Shop</title>
 	<script src="./bower_components/angular/angular.min.js"></script>
 
-	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js">
-
-	</script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 	<script src="app.js"></script>
-	<!-- <link rel="stylesheet" href="bower_components/lumx/dist/lumx.css"> -->
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+	<script src="controllers/homeCtrl.js"></script>
+	<script src="controllers/headerCtrl.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/personal.css">
+	<link rel="stylesheet" href="style/personal.css">
 </head>
 <body>
-<div class="container-fluid">
-	<div class="col-md-3">
-		<ng-include src="'header.html'" ></ng-include>
+
+	<ng-include src="'templates/header.html'" ></ng-include>
+
+	<div class="container-fluid">
+			<ui-view></ui-view>
 	</div>
-	<div class="col-md-9 sideLeft">
-		<ui-view></ui-view>
-	<div class="col-md-12">
-		<ng-include src="'offers.html'" ></ng-include>
-	</div>
-	</div>
-</div>
 <div class="footer">
 	<ng-include src="'footer.html'" ></ng-include>
 </div>

@@ -1,0 +1,15 @@
+.newactive{
+  background:$secondary-color;
+  a{
+    color: white !important;
+  }
+}
+.products{
+  padding-top: 150px;
+  &__header-pop-up{
+    margin: 0 auto;
+    background-color: white;
+    height: 300px;
+    width: 300px;
+  }
+}

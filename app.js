@@ -1,10 +1,9 @@
-/*angular.module('myModule', ['lumx']);*/
-app = angular.module("app", ["ui.router"])
+angular.module("app", ["ui.router"])
 
 .config(function($stateProvider, $urlRouterProvider){
 		$stateProvider
-		.state("home",{
-			url:"/home",
+		.state("/",{
+			url:"/",
 			templateUrl:"templates/home.html",
 			controller: "homeCtrl"
 		})
@@ -18,12 +17,10 @@ app = angular.module("app", ["ui.router"])
 			templateUrl:"templates/articulos.html",
 			controller: "padleCtrl"
 		})
-		$urlRouterProvider.otherwise("/home");
+
+		$urlRouterProvider.otherwise("/");
 })
 
-.controller("homeCtrl", function($scope, $state){
-
-})
 .controller("padleCtrl",function($scope, $state, $http){
 	$scope.productos = [];
 	$http.get('articles.json')

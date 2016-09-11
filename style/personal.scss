@@ -1,0 +1,64 @@
+@import 'components/main';
+
+header{
+  height: 500px;
+  background-image:url('../img/delpo.jpg');
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  background-position: 0px 110px;
+}
+
+body{
+  font-family: $font-family-primary;
+}
+
+
+.brand{
+	font-size: 30px;
+}
+.nav li a:focus, .nav li a:hover, .brand:hover{
+	border-radius: 5px;
+	color: #4C9EF0;
+}
+.captionPs{
+	position: absolute;
+  left: 10%;
+	top: 20%;
+	color: #fafafa;
+	font-weight: 800;
+	font-size: 70px;
+	font-style: italic;
+	text-shadow: 2px 2px #000;
+	}
+
+.table{
+   tbody{
+     tr {
+       td {
+  	      text-align:center;
+          img{
+          	height: 100px;
+          }
+        }
+     }
+  }
+}
+
+.align{
+	margin-top: 40px;
+}
+.thumbnail img{
+	height: 150px;
+}
+.sideLeft{
+	margin-top: 70px;
+}
+
+.footer{
+	padding: 40px;
+	width: 100%;
+	background-color:  #4C9EF0;
+	color: white;
+	font-weight: 600;
+
+}

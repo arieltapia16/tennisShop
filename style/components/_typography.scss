@@ -1,5 +1,7 @@
 $primary-color : #4C9EF0;
 $secondary-color:#3f3d3d;
 $font-color-white: #fff;
-
 $font-family-primary: 'Montserrat', sans-serif;
+h1,h2,h3,h4{
+  font-family: $font-family-primary
+}

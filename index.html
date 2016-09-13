@@ -1,31 +1,31 @@
-<html ng-app="app">
-<head>
-	<meta charset="UTF-8">
-	<title>Tennis Shop</title>
-	<script src="./bower_components/angular/angular.min.js"></script>
+	<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title>Tennis Shop</title>
+		<script src="./bower_components/angular/angular.min.js"></script>
 
-	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-	<script src="app.js"></script>
-	<script src="controllers/homeCtrl.js"></script>
-	<script src="controllers/headerCtrl.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="style/personal.css">
-</head>
-<body>
+		<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script src="app.js"></script>
+		<script src="controllers/homeCtrl.js"></script>
+		<script src="controllers/headerCtrl.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+		<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style/personal.css">
+	</head>
+	<body>
 
-	<ng-include src="'templates/header.html'" ></ng-include>
+		<ng-include src="'templates/header.html'" ></ng-include>
 
-	<div class="container-fluid">
-			<ui-view></ui-view>
+		<div class="container-fluid">
+				<ui-view></ui-view>
+		</div>
+	<div class="footer">
+		<ng-include src="'footer.html'" ></ng-include>
 	</div>
-<div class="footer">
-	<ng-include src="'footer.html'" ></ng-include>
-</div>
-	<script src="./bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="./bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<!-- <script src="bower_components/bootstrap/dist/js/personal.js"></script> -->
+		<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- <script src="bower_components/bootstrap/dist/js/personal.js"></script> -->
 
-</body>
-</html>
+	</body>
+	</html>

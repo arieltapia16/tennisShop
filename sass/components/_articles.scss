@@ -1,0 +1,53 @@
+.newactive{
+  background:$secondary-color;
+  a{
+    color: white !important;
+  }
+}
+.products{
+  // padding-top: 150px;
+    &__header-pop-up{
+        position: absolute;
+        top: 22%;
+        background-color: white;
+        width: 80%;
+        height: 300px;
+        padding: 10px;
+        &__groups{
+          width: 60%;
+          float: left;
+          padding-right: 20%;
+          li{
+            position: relative;
+            display: inline-block;
+            list-style: none;
+            padding-right: 15px;
+            padding-top: 15px;
+            font-size: 20px;
+            a{
+              cursor: pointer;
+              color: #686868;
+              text-decoration: underline;
+            }
+          }
+        }
+        &__img-art{
+          img{
+            // width: 40%;
+            height: 85%;
+            position: absolute;
+            top:0;
+            right: 10px;
+          }
+        }
+        &__foot{
+            background-color: $secondary-color;
+            width: 100%;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            height: 10%;
+            border-radius: 0px 0px 5px 5px;
+        }
+    }
+}

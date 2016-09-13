@@ -10,6 +10,7 @@ angular.module("app")
         {
             title : 'Tennis',
             option: 't',
+            img:"img/tennis.jpg",
             items :[
                 {
                     name:'Raquetas',
@@ -41,6 +42,7 @@ angular.module("app")
         {
             title : 'Padel',
             option: 'p',
+            img:"img/padel.jpg",
             items :[
                 {
                     name:'Raquetas',
@@ -61,6 +63,18 @@ angular.module("app")
                 },
 
             ]
+        },
+        {
+            title : 'Calzado',
+            option: 'c',
+            img:"img/calzado.jpg",
+            items :[]
+        },
+        {
+            title : 'Indumentaria',
+            option: 'i',
+            img:"img/indumentaria.jpg",
+            items :[]
         }
 
 

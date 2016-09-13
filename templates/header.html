@@ -40,9 +40,9 @@
   <div class="container products" ng-repeat="popup in popups">
     <div class="products__header-pop-up" ng-show="articles_option == '{{popup.option}}'" ng-mouseleave="option('no')" >
       <h1>{{popup.title}}</h1>
-      <section class="products__header-pop-up__groups" ng-repeat="item in popup.items">
-        <ul>
-            <li>
+      <section class="products__header-pop-up__groups" >
+        <ul >
+            <li ng-repeat="item in popup.items">
               <a href="{{item.url}}">{{item.name}}</a>
             </li>
         </ul>

@@ -13,11 +13,23 @@ var gulp = require('gulp'),
 gulp.task('sass', function() {
     gulp.src('./sass/**/*.scss')
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(gulp.dest('./style/'));
+    .pipe(gulp.dest('./style/'))
+    .pipe(browserSync.reload({ //this reload the page when change sass
+      stream: true
+    }));
 });
 
-gulp.task('serve', serve('')); //serve in localhost:3000
+// gulp.task('serve', serve('')); //serve in localhost:3000
 // gulp.task('livereload')
+
+// Browser Sync task definition
+gulp.task('serve', function() {
+  return browserSync.init({
+    server: {
+      baseDir: ''
+    },
+  });
+});
 
 // gulp.task('serve', function() {
   // livereload.listen();
@@ -30,6 +42,6 @@ gulp.task('serve', serve('')); //serve in localhost:3000
   // });
 // })
   //Watch task
-gulp.task('default',function() {
+gulp.task('default', ['serve'],function() {
     gulp.watch('sass/personal.scss',['sass']);
 });

@@ -11,37 +11,26 @@ var gulp = require('gulp'),
 
 
 gulp.task('sass', function() {
-    gulp.src('./sass/**/*.scss')
+    gulp.src('./public/sass/**/*.scss')
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(gulp.dest('./style/'))
+    .pipe(gulp.dest('./public/style/'))
     .pipe(browserSync.reload({ //this reload the page when change sass
       stream: true
     }));
 });
 
-// gulp.task('serve', serve('')); //serve in localhost:3000
-// gulp.task('livereload')
 
 // Browser Sync task definition
 gulp.task('serve', function() {
   return browserSync.init({
     server: {
-      baseDir: ''
+      baseDir: 'public'
     },
   });
 });
 
-// gulp.task('serve', function() {
-  // livereload.listen();
 
-  // browserSync({
-  //   server: {
-  //     baseDir: '',
-  //   },
-  //  port: 8080
-  // });
-// })
   //Watch task
 gulp.task('default', ['serve'],function() {
-    gulp.watch('sass/personal.scss',['sass']);
+    gulp.watch('./public/sass/**/*.scss',['sass']);
 });

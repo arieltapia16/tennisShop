@@ -1,84 +1,53 @@
 angular.module("app")
-.controller("headerCtrl", function($scope, $state){
+.controller("headerCtrl", function($scope, $state , subCategoriesService){
     $scope.option = function(opt){
-        // console.log(opt);
         $scope.articles_option = opt
     }
 
-    $scope.popups = [
 
-        {
-            title : 'Tennis',
-            option: 't',
-            img:"img/tennis.jpg",
-            items :[
-                {
-                    name:'Raquetas',
-                    url:'/'
-                },
-                {
-                    name:'Indumentaria',
-                    url:'/'
-                },
-                {
-                    name:'Grips',
-                    url:'/'
-                },
-                {
-                    name:'Pelotas',
-                    url:'/'
-                },
-                {
-                    name:'Calzado',
-                    url:'/'
-                },
-                {
-                    name:'Accesorios',
-                    url:'/'
-                },
+    subCategoriesService.subcategory().then(function(response){
+            $scope.test = response;
+             $scope.popups = [];
 
+            var extradata_obj_array=[
+                {
+                    name:'tennis',
+                    src: "img/tennis.jpg",
+                },
+                {
+                    name:'padel',
+                    src: "img/padel.jpg",
+                },
+                {
+                    name:'calzado',
+                    src: "img/calzado.jpg",
+                },
+                {
+                    name:'indumentaria',
+                    src: "img/indumentaria.jpg",
+                }
             ]
-        },
-        {
-            title : 'Padel',
-            option: 'p',
-            img:"img/padel.jpg",
-            items :[
-                {
-                    name:'Raquetas',
-                    url:'/'
-                },
-                {
-                    name:'Indumentaria',
-                    url:'/'
-                },
-                {
-                    name:'Pelotas',
-                    url:'/'
-                },
 
-                {
-                    name:'Accesorios',
-                    url:'/'
-                },
+             angular.forEach(response.data, function(subcat){
 
-            ]
-        },
-        {
-            title : 'Calzado',
-            option: 'c',
-            img:"img/calzado.jpg",
-            items :[]
-        },
-        {
-            title : 'Indumentaria',
-            option: 'i',
-            img:"img/indumentaria.jpg",
-            items :[]
-        }
+                obj = {
+                    title : subcat.category,
+                    option:subcat.category[0],
+                    items : subcat.items,
+                    img:'',
+                }
 
+                angular.forEach(extradata_obj_array,function(ext){
+                    if (ext.name == subcat.category) {
+                        obj.img = ext.src;
+                    }
+                })
 
+                $scope.popups.push(obj);
+             })
+            //  console.log($scope.popups);
 
-    ]
-
+        }, function(error){
+          console.log('error',error);
+      });
 })

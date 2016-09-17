@@ -29,10 +29,10 @@
             <div class="container-fluid nav-bottom">
               <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                  <li  ng-class="{newactive : articles_option == 't'}"><a href="#" ng-mouseenter="option('t')">Tennis<span class="sr-only">(current)</span></a></li>
-                  <li  ng-class="{newactive : articles_option == 'p'}"><a href="#" ng-mouseenter="option('p')">Padel</a></li>
-                  <li  ng-class="{newactive : articles_option == 'c'}"><a href="#" ng-mouseenter="option('c')">Calzado</a></li>
-                  <li  ng-class="{newactive : articles_option == 'i'}"><a href="#" ng-mouseenter="option('i')">Indumentaria</a></li>
+                  <li  ng-class="{newactive : articles_option == 't'}"><a href="#/tennis" ng-mouseenter="option('t')">Tennis<span class="sr-only">(current)</span></a></li>
+                  <li  ng-class="{newactive : articles_option == 'p'}"><a href="#/padel" ng-mouseenter="option('p')">Padel</a></li>
+                  <li  ng-class="{newactive : articles_option == 'c'}"><a href="#/calzado" ng-mouseenter="option('c')">Calzado</a></li>
+                  <li  ng-class="{newactive : articles_option == 'i'}"><a href="#/indumentaria" ng-mouseenter="option('i')">Indumentaria</a></li>
                 </ul>
               </div><!-- /.navbar-collapse -->
             </div>
@@ -43,7 +43,7 @@
               <section class="products__header-pop-up__groups" >
                 <ul >
                     <li ng-repeat="item in popup.items">
-                      <a href="{{item.url}}">{{item.name}}</a>
+                      <a href="">{{item}}</a>
                     </li>
                 </ul>
               </section>

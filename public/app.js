@@ -9,7 +9,7 @@ angular.module("app", ["ui.router"])
 		})
 		.state("tennis",{
 			url:"/tennis",
-			templateUrl:"/templates/articulos.html",
+			templateUrl:"/templates/articles.html",
 			controller: "artCtrl"
 		})
 		.state("padle",{

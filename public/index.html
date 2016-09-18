@@ -6,24 +6,28 @@
 
 		<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 		<script src="app.js"></script>
-		<script src="services/sub_categories_service.js"></script>
+		<script src="filters/capitalizeFirstFilter.js"></script>
 		<script src="controllers/homeCtrl.js"></script>
 		<script src="controllers/articlesCtrl.js"></script>
 		<script src="controllers/headerCtrl.js"></script>
+		<script src="services/sub_categoriesService.js"></script>
+		<script src="services/articlesService.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+		<link rel="stylesheet" href="./bower_components/bootstrap/dist/fonts/font-awesome-4.6.3/css/font-awesome.min.css">
 		<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="style/personal.css">
 	</head>
 	<body>
-
+		<!-- header -->
 		<ng-include src="'templates/header.html'" ></ng-include>
 
-		<div class="container-fluid">
-			<ui-view></ui-view>
+		<!-- main-container -->
+		<ui-view class="container-fluid"></ui-view>
+
+		<!-- footer -->
+		<div class="footer">
+			<ng-include src="'footer.html'" ></ng-include>
 		</div>
-	<div class="footer">
-		<ng-include src="'footer.html'" ></ng-include>
-	</div>
 		<script src="./bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="./bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

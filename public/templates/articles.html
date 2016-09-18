@@ -1,0 +1,35 @@
+<div class="row main-container__articles">
+    <div class="col-md-2">
+        <h4>Filtrar por</h4>
+        <hr>
+
+        <h5>Marca</h5>
+
+        <div class="main-container__articles__side-filter" >
+            <p><a href="" ng-click="all = true">Todas</a></p>
+            <p ng-repeat="trade in trades">
+                <a href="" >{{trade | capitalizeFirst:1}}</a>
+            </p>
+        </div>
+        <h5>Rubro</h5>
+        <p class="main-container__articles__side-filter" ng-repeat="subcategory in subcategories">
+            <a href="" >{{subcategory | capitalizeFirst:1}}</a>
+        </p>
+
+    </div>
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-lg-3" ng-repeat="article in articles " ng-hide="all==false && article.trade == 'nike' ">
+                <div class="thumbnail">
+                  <img ng-src="img/articles_images/{{article.img}}" alt="...">
+                  <div class="caption">
+                    <p>{{article.description}}</p>
+                    <h4>{{article.trade}}</h4>
+                    <h3 class="price">$ {{article.price}}</h3>
+                    <p class="text-center"><a href="#" class="btn btn-success" role="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Agregar a carrito</a></p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

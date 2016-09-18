@@ -4,7 +4,6 @@ angular.module("app")
         $scope.articles_option = opt
     }
 
-
     subCategoriesService.subcategory().then(function(response){
             $scope.test = response;
              $scope.popups = [];

@@ -1,0 +1,27 @@
+.main-container{
+    min-height:  500px;
+    background-image:url('../img/delpo.jpg');
+    background-size: 100% ;
+    background-repeat: no-repeat;
+    background-position: 0px 110px;
+
+    &__articles{
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 200px;
+
+        &__side-filter{
+            padding-left: 10px;
+        }
+        .thumbnail{
+            height: 330px;
+            img{
+                height:  50%;
+            }
+            .price{
+                font-weight: bold;
+                color:red;
+            }
+        }
+    }
+}

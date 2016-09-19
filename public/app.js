@@ -7,16 +7,15 @@ angular.module("app", ["ui.router"])
 			templateUrl:"templates/home.html",
 			controller: "homeCtrl"
 		})
-		.state("tennis",{
-			url:"/tennis",
-			templateUrl:"/templates/articles.html",
-			controller: "artCtrl"
-		})
-		.state("padle",{
-			url:"/articulos/padle",
-			templateUrl:"templates/articulos.html",
-			controller: "padleCtrl"
-		})
-
+		// .state("articlesAll",{
+		// 	url:"/articles",
+		// 	templateUrl:"/templates/articles.html",
+		// 	controller: "artCtrl"
+		// })
+		.state("articles", {
+            url: "/articles/:cat",
+            templateUrl: "/templates/articles.html",
+            controller: "artCtrl"
+        })
 		$urlRouterProvider.otherwise("/");
 })

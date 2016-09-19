@@ -26,11 +26,11 @@
         </ul>
       </div>
     </div><!-- /.container-fluid -->
-    <div class="container-fluid nav-bottom">
+    <div class="container-fluid nav-bottom" ng-click="option('no')">
       <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li  ng-click="option('no')" ng-class="{newactive : articles_option == 't'}"><a href="#/tennis" ng-mouseenter="option('t')">Tennis<span class="sr-only">(current)</span></a></li>
-          <li  ng-click="option('no')" ng-class="{newactive : articles_option == 'p'}"><a href="#/padel" ng-mouseenter="option('p')">Padel</a></li>
+          <li  ng-click="option('no')" ng-class="{newactive : articles_option == 't'}"><a ui-sref="articles({cat:'tennis'})" ng-mouseenter="option('t')">Tennis<span class="sr-only">(current)</span></a></li>
+          <li  ng-click="option('no')" ng-class="{newactive : articles_option == 'p'}"><a ui-sref="articles({cat:'padel'})" ng-mouseenter="option('p')">Padel</a></li>
           <li  ng-click="option('no')" ng-class="{newactive : articles_option == 'c'}"><a href="#/calzado" ng-mouseenter="option('c')">Calzado</a></li>
           <li  ng-click="option('no')" ng-class="{newactive : articles_option == 'i'}"><a href="#/indumentaria" ng-mouseenter="option('i')">Indumentaria</a></li>
         </ul>

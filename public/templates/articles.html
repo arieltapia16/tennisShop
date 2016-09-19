@@ -1,25 +1,35 @@
-<div class="row main-container__articles">
+<div class="row main-container__articles" >
     <div class="col-md-2">
         <h4>Filtrar por</h4>
         <hr>
+        <p><a href="" ng-click="all()">Mostrar todo</a></p>
 
         <h5>Marca</h5>
 
         <div class="main-container__articles__side-filter" >
-            <p><a href="" ng-click="all = true">Todas</a></p>
             <p ng-repeat="trade in trades">
-                <a href="" >{{trade | capitalizeFirst:1}}</a>
+                <a href="" ng-click=" tradeFilter(trade)">{{trade | capitalizeFirst:1}}</a>
             </p>
         </div>
         <h5>Rubro</h5>
         <p class="main-container__articles__side-filter" ng-repeat="subcategory in subcategories">
-            <a href="" >{{subcategory | capitalizeFirst:1}}</a>
+            <a href="" ng-click=" subcatFilter(subcategory)">{{subcategory | capitalizeFirst:1}}</a>
         </p>
 
     </div>
     <div class="col-md-10">
         <div class="row">
-            <div class="col-lg-3" ng-repeat="article in articles " ng-hide="all==false && article.trade == 'nike' ">
+            <div class="col-lg-6">
+                <ol class="breadcrumb">
+                    <li><a href="#">{{category}}</a></li>
+                    <li><a href="#">{{nav.subcategory}}</a></li>
+                    <li class="active">{{nav.trade}}</li>
+                </ol>
+            </div>
+            <div class="col-lg-6"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3" ng-repeat="article in articles " ng-if = " filterArticles(article.trade , article.subcategory)">
                 <div class="thumbnail">
                   <img ng-src="img/articles_images/{{article.img}}" alt="...">
                   <div class="caption">

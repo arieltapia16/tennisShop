@@ -7,9 +7,9 @@ angular.module("app")
     articlesService.articles().then(function(response){
 
         // console.log(response.data);
-        $scope.articles=[];
+        $scope.articlesforsearch=[];
         angular.forEach(response.data ,function(data){
-            $scope.articles.push(data.description)
+            $scope.articlesforsearch.push(data.description)
         })
     })
 

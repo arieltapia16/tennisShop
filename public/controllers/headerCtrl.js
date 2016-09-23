@@ -1,8 +1,17 @@
 angular.module("app")
-.controller("headerCtrl", function($scope, $state , subCategoriesService){
+.controller("headerCtrl", function($scope, $state ,$rootScope,articlesService, subCategoriesService){
     $scope.option = function(opt){
-        $scope.articles_option = opt
+        $rootScope.articles_option = opt
     }
+
+    articlesService.articles().then(function(response){
+
+        // console.log(response.data);
+        $scope.articles=[];
+        angular.forEach(response.data ,function(data){
+            $scope.articles.push(data.description)
+        })
+    })
 
     subCategoriesService.subcategory().then(function(response){
             $scope.test = response;

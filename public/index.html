@@ -10,6 +10,7 @@
 		<script src="controllers/homeCtrl.js"></script>
 		<script src="controllers/articlesCtrl.js"></script>
 		<script src="controllers/headerCtrl.js"></script>
+		<script src="directives/searchDirective.js"></script>
 		<script src="services/sub_categoriesService.js"></script>
 		<script src="services/articlesService.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
@@ -17,7 +18,7 @@
 		<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="style/personal.css">
 	</head>
-	<body >
+	<body ng-click="globaloption()">
 		<!-- header -->
 		<ng-include src="'templates/header.html'" ></ng-include>
 
@@ -29,7 +30,7 @@
 			<ng-include src="'footer.html'" ></ng-include>
 		</div>
 		<script src="./bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="./bower_components/jquery-ui/jquery-ui.min.js"></script>
 		<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<!-- <script src="bower_components/bootstrap/dist/js/personal.js"></script> -->
 

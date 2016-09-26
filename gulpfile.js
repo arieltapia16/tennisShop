@@ -18,6 +18,14 @@ gulp.task('sass', function() {
       stream: true
     }));
 });
+gulp.task('sass-admin', function() {
+    gulp.src('./admin/sass/**/*.scss')
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(gulp.dest('./admin/style/'))
+    .pipe(browserSync.reload({ //this reload the page when change sass
+      stream: true
+    }));
+});
 
 
 // Browser Sync task definition
@@ -28,9 +36,22 @@ gulp.task('serve', function() {
     },
   });
 });
+// Browser Sync task definition
+gulp.task('serveAdmin', function() {
+  return browserSync.init({
+    server: {
+      baseDir: 'admin'
+    },
+  });
+});
 
 
   //Watch task
 gulp.task('default', ['serve'],function() {
     gulp.watch('./public/sass/**/*.scss',['sass']);
+});
+
+//Watch task
+gulp.task('admin', ['serveAdmin'],function() {
+  gulp.watch('./admin/sass/**/*.scss',['sass-admin']);
 });

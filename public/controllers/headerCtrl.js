@@ -3,6 +3,12 @@ angular.module("app")
     $scope.option = function(opt){
         $rootScope.articles_option = opt
     }
+    $scope.$watch('searchedarticle', function(searched){
+        if (searched) {
+            $rootScope.searchedarticle = searched;
+
+        }
+    })
 
     articlesService.articles().then(function(response){
 

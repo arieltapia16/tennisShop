@@ -28,7 +28,8 @@
             </div>
             <div class="col-lg-6"></div>
         </div>
-        <div class="row">
+        <div class="row article-show">
+            <p ng-hide="articles.length">No articulos en esta selección.</p>
             <div class="col-lg-3" ng-repeat="article in articles " ng-if = " filterArticles(article.trade , article.subcategory)">
                 <div class="thumbnail">
                   <img ng-src="img/articles_images/{{article.img}}" alt="...">

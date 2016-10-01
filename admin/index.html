@@ -1,0 +1,27 @@
+<html ng-app="appadmin">
+    <head>
+        <meta charset="UTF-8">
+        <title>Administrador</title>
+        <script src="./bower_components/angular/angular.min.js"></script>
+
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="appadmin.js"></script>
+        <script src="controllers/loginCtrl.js"></script>
+        <script src="controllers/mainCtrl.js"></script>
+        <script src="services/loginService.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="./bower_components/bootstrap/dist/fonts/font-awesome-4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="style/admin.css">
+    </head>
+    <body >
+
+		<!-- main-container -->
+        <div class="container-fluid">
+            <ui-view ></ui-view>
+        </div>
+
+    </body>
+</html>

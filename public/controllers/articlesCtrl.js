@@ -1,11 +1,14 @@
 angular.module("app")
 .controller("artCtrl", function($scope, articlesService, $stateParams){
 
+
     $scope.category = $stateParams.cat;
+    $scope.subcategory = $stateParams.sub;
+    $scope.id = $stateParams.id;
 
     $scope.nav={
-        subcategory : "todos los rubros",
-        trade : "todas las marcas"
+        subcategory : "todos",
+        trade : "todas"
     }
 
 
@@ -13,8 +16,6 @@ angular.module("app")
 
     $scope.all = function(){
         trade = ""; subcat=""; stock="";
-        $scope.nav.trade = "todas las marcas";
-        $scope.nav.subcategory = "todos los rubros";
     }
 
     $scope.tradeFilter = function(trd){
@@ -29,20 +30,16 @@ angular.module("app")
         }else {
             if (trade && !subcat) {
                 if (trade == tra) {
-                    $scope.nav.trade = tra;
+                    $scope.nav = tra;
                     return true
                 }
             }else if (subcat && !trade ) {
                 if (subcat == sub) {
-                    $scope.nav.subcategory = subcat;
+
                     return true
                 }
             }else {
-                if (subcat == sub && trade == tra) {
-                    $scope.nav.trade = tra;
-                    $scope.nav.subcategory = subcat;
-                    return true
-                }
+                if (subcat == sub && trade == tra) {return true}
             }
         }
     }
@@ -52,9 +49,16 @@ angular.module("app")
         $scope.articles=[];
         angular.forEach(response.data ,function(data){
             if (data.category == $scope.category) {
-                $scope.articles.push(data)
+                if ($scope.subcategory ) {
+                    if (data.subcategory == $scope.subcategory) {
+                        $scope.articles.push(data)
+                    }
+                }else{
+                    $scope.articles.push(data)
+                }
             }
         })
+
         // console.log('data.category',data.category, 'category',category);
 
 

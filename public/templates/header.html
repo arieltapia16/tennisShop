@@ -15,7 +15,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <form class="navbar-form navbar-left" id="search-products">
           <div class="input-group">
-            <input id="search-place" type="text" search-directive="articlesforsearch"  class="form-control" placeholder="¿Que estás buscando? ">
+            <input id="search-place" type="text" search-directive="articlesforsearch" ng-model="searchedarticle" class="form-control" placeholder="¿Que estás buscando? ">{{searchedarticle}}
             <div  id="submit-search" class="input-group-addon">Buscar</div>
           </div>
           <!-- <button type="submit" class="btn btn-default">Submit</button> -->
@@ -29,8 +29,8 @@
     <div class="container-fluid nav-bottom" ng-click="option('no')">
       <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li  ng-click="option('no')" ng-class="{newactive : articles_option == 't'}"><a ui-sref="articles({cat:'tennis'})" ng-mouseenter="option('t')">Tennis<span class="sr-only">(current)</span></a></li>
-          <li  ng-click="option('no')" ng-class="{newactive : articles_option == 'p'}"><a ui-sref="articles({cat:'padel'})" ng-mouseenter="option('p')">Padel</a></li>
+          <li  ng-click="option('no')" ng-class="{newactive : articles_option == 't'}"><a ui-sref="category({cat:'tennis'})" ng-mouseenter="option('t')">Tennis<span class="sr-only">(current)</span></a></li>
+          <li  ng-click="option('no')" ng-class="{newactive : articles_option == 'p'}"><a ui-sref="category({cat:'padel'})" ng-mouseenter="option('p')">Padel</a></li>
           <li  ng-click="option('no')" ng-class="{newactive : articles_option == 'c'}"><a href="#/calzado" ng-mouseenter="option('c')">Calzado</a></li>
           <li  ng-click="option('no')" ng-class="{newactive : articles_option == 'i'}"><a href="#/indumentaria" ng-mouseenter="option('i')">Indumentaria</a></li>
         </ul>
@@ -43,7 +43,7 @@
       <section class="products__header-pop-up__groups" >
         <ul >
             <li ng-repeat="item in popup.items">
-              <a href="">{{item}}</a>
+              <a ui-sref="articles({cat:'{{popup.title}}',sub:'{{item}}' })">{{item}}</a>
             </li>
         </ul>
       </section>

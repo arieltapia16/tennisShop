@@ -2,6 +2,7 @@
 
 
 bower install
+
 npm install (for gulp)
 
 Init commands

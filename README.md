@@ -4,7 +4,7 @@
 bower install
 npm install (for gulp)
 
-Command for init
+Init commands
 
 gulp  -runs the user server and user styles (SASS)
 

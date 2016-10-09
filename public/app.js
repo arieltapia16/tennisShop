@@ -18,7 +18,7 @@ angular.module("app", ["ui.router"])
 			controller: "artCtrl"
 		})
 		.state("articles", {
-            url: "/articles/:cat/:sub/:id",
+            url: "/articles/:cat/:sub/:code",
             templateUrl: "/templates/articles.html",
             controller: "artCtrl"
         })

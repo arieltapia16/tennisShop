@@ -1,16 +1,19 @@
 angular.module("app")
 .controller("artCtrl", function($scope, articlesService, $stateParams){
 
-
     $scope.category = $stateParams.cat;
     $scope.subcategory = $stateParams.sub;
-    $scope.id = $stateParams.id;
+    $scope.oneItem = false;
+
+    if ($stateParams.code) {
+        // $scope.code = $stateParams.code;
+        $scope.oneItem = true;
+    }
 
     $scope.nav={
         subcategory : "todos",
         trade : "todas"
     }
-
 
     var trade = "", subcat="", stock="";
 
@@ -59,9 +62,6 @@ angular.module("app")
             }
         })
 
-        // console.log('data.category',data.category, 'category',category);
-
-
         //unique in array function
         function onlyUnique(value, index, self) {
             return self.indexOf(value) === index;
@@ -79,11 +79,6 @@ angular.module("app")
         })
 
         $scope.subcategories = $scope.subcategories.filter(onlyUnique);
-
-
-
-
-        // console.log($scope.subcategories);
     })
 
 })

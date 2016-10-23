@@ -1,0 +1,34 @@
+<header ng-controller="headerCtrl">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid nav-top">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a id="logo" ng-click="option('no')" class="navbar-brand" href="#"><img src="img/logo-ts.png" alt=""></a>
+      </div>
+      <div class="right-nav">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Entrar</a></li><li class="divider">|</li>
+          <li><a href="#">Registrarme</a></li>
+        </ul>
+      </div>
+    </div><!-- /.container-fluid -->
+    <div class="container-fluid nav-bottom" ng-click="option('no')">
+      <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <!-- <ul class="nav navbar-nav">
+          <li  ng-click="option('no')" ng-class="{newactive : articles_option == 't'}"><a ui-sref="category({cat:'tennis'})" ng-mouseenter="option('t')">Tennis<span class="sr-only">(current)</span></a></li>
+          <li  ng-click="option('no')" ng-class="{newactive : articles_option == 'p'}"><a ui-sref="category({cat:'padel'})" ng-mouseenter="option('p')">Padel</a></li>
+          <li  ng-click="option('no')" ng-class="{newactive : articles_option == 'c'}"><a href="#/calzado" ng-mouseenter="option('c')">Calzado</a></li>
+          <li  ng-click="option('no')" ng-class="{newactive : articles_option == 'i'}"><a href="#/indumentaria" ng-mouseenter="option('i')">Indumentaria</a></li>
+        </ul> -->
+      </div><!-- /.navbar-collapse -->
+    </div>
+  </nav>
+
+
+</header>

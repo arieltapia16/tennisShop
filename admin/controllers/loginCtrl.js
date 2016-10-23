@@ -1,10 +1,8 @@
-angular.module('appadmin')
+angular.module('admin')
 
-.controller("loginCtrl", function($scope, $state, loginService, $location){
-
+.controller("loginCtrl", function($scope,$rootScope, $state, loginService, $location){
+    $rootScope.login = true;
 $scope.admin = function(){
-
-    // console.log($scope.user,$scope.pass);
 
     if ($scope.user) {
         loginService.login($scope.user,$scope.pass)
@@ -12,6 +10,7 @@ $scope.admin = function(){
             console.log(response.data);
             if (response.data == 'access') {
                 $location.path('/main')
+                $rootScope.login = false;    
             }
 
         })

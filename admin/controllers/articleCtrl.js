@@ -3,7 +3,7 @@ angular.module('admin')
   // upload on file select or drop
   $scope.upload = function (file) {
     Upload.upload({
-      url: 'http://localhost/tennis-shop/data/file.php',
+      url: 'http://localhost/tennis-shop/data/img.php',
       data: {file: file, 'username': $scope.username},
       headers: {
         'Content-Type': 'Access-Control-Allow-Origin'

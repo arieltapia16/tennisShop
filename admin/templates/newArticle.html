@@ -1,0 +1,61 @@
+<div class="content">
+  <form ng-submit="upload()">
+    <div class="col-md-4">
+        <div class="form-group">
+          <label for="code">Código</label>
+          <input type="text" class="form-control" ng.model="code">
+        </div>
+        <div class="form-group">
+          <label for="trade_id">Marca</label>
+          <select type="text" class="form-control" ng.model="trade_id">
+            <option value="">Seleccione</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sub_category_id">Subcategoria</label>
+          <select type="text" class="form-control" ng.model="sub_category_id">
+            <option value="">Seleccione</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <textarea class="form-control" ng.model="description" ></textarea>
+        </div>
+        <div class="col-md-12 no-padding">
+          <div class="form-group col-md-6 no-padding">
+            <label for="price">Precio</label>
+            <div class="input-group">
+              <div class="input-group-addon">$</div>
+              <input type="number" class="form-control" ng.model="price">
+            </div>
+          </div>
+          <div class="col-md-6"></div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6 no-padding-left">
+            <label for="size">Talle</label>
+            <input type="text" class="form-control" ng.model="size">
+          </div>
+          <div class="col-md-6 no-padding-left">
+            <label for="stock">Cantidad</label>
+            <input type="Number" class="form-control" ng.model="stock">
+          </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        <input type="file" ng-model="file" name="file" ngf-pattern="'img/articles_images*'"
+          ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 100, height: 100}"
+        >
+        <p class="help-block">Example block-level help text here.</p>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input ng.model="active" type="checkbox" checked="true"> Publicar artículo
+        </label>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>

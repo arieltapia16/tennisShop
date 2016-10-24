@@ -1,5 +1,5 @@
 <div class="row main-container__articles" >
-    <div class="col-md-2">
+    <div class="col-md-2" ng-hide="oneItem">
         <h4>Filtrar por</h4>
         <hr>
         <p><a href="" ng-click="all()">Mostrar todo</a></p>
@@ -17,22 +17,23 @@
         </p>
 
     </div>
+    <div class="col-md-2" ng-show="oneItem"></div>
     <div class="col-md-10">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6" ng-hide="oneItem">
                 <ol class="breadcrumb">
                     <li><a href="#">{{category}}</a></li>
                     <li><a href="#">{{nav.subcategory}}</a></li>
                     <li class="active">{{nav.trade}}</li>
                 </ol>
             </div>
-            <div class="col-lg-6"></div>
+            <div class="col-lg-6" ng-hide="oneItem"></div>
         </div>
         <div class="row article-show">
             <p ng-hide="articles.length">No articulos en esta selección.</p>
-            <div class="col-lg-3" ng-repeat="article in articles " ng-if = " filterArticles(article.trade , article.subcategory)">
+            <div  ng-class="{'col-lg-6':oneItem, 'col-lg-3':!oneItem}" ng-repeat="article in articles " ng-if = " filterArticles(article.trade , article.subcategory)">
                 <div class="thumbnail">
-                  <img ng-src="img/articles_images/{{article.img}}" alt="...">
+                  <a ui-sref="articles({cat:'{{article.category}}',sub:'{{article.subcategory}}',code:'{{article.code}}'})"><img ng-src="img/articles_images/{{article.img}}" alt="..."></a>
                   <div class="caption">
                     <p>{{article.description}}</p>
                     <h4>{{article.trade}}</h4>

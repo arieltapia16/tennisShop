@@ -50,10 +50,13 @@
     </div>
     <div class="col-md-6">
       <div class="form-group">
+        <div ng-repeat="step in stepsModel">
+          <img class="thumb" ng-src="{{step}}" />
+        </div>
         <label for="exampleInputFile">File input</label>
         <input type="file" ngf-select ng-model="picFile" name="file"
              accept="image/*" ngf-max-size="2MB" required
-             ngf-model-invalid="errorFile">
+             ngf-model-invalid="errorFile" onchange="angular.element(this).scope().imageUpload(this)" >
         <p class="help-block">Example block-level help text here.</p>
       </div>
       <div class="checkbox">

@@ -30,6 +30,20 @@ angular.module('admin')
       file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total))
     })
   }
+  $scope.stepsModel = []
+
+  $scope.imageUpload = function (element) {
+    var reader = new FileReader()
+    reader.onload = $scope.imageIsLoaded
+    reader.readAsDataURL(element.files[0])
+  }
+
+  $scope.imageIsLoaded = function (e) {
+    $scope.$apply(function () {
+      $scope.stepsModel[0] = e.target.result
+    })
+  }
+
   categoriesService.category().then(function (response) {
     $scope.categories = response.data
   })

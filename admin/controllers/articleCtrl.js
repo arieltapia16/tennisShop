@@ -1,20 +1,36 @@
 angular.module('admin')
-.controller('article', function ($scope, Upload) {
+.controller('article', function ($scope, Upload, categoriesService) {
   // upload on file select or drop
   $scope.upload = function (file) {
-    Upload.upload({
-      url: 'http://localhost/tennis-shop/data/img.php',
-      data: {file: file, 'username': $scope.username},
-      headers: {
-        'Content-Type': 'Access-Control-Allow-Origin'
+    file.upload = Upload.upload({
+      url: 'http://localhost/tennis-shop/data/file.php',
+      data: {
+        code: $scope.code,
+        trade_id: $scope.trade_id,
+        sub_category_id: $scope.sub_category_id,
+        description: $scope.description,
+        price: $scope.price,
+        stock: $scope.stock,
+        size: $scope.size,
+        submit: true,
+        file: file
       }
-    }).then(function (resp) {
-      console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data)
-    }, function (resp) {
-      console.log('Error status: ' + resp.status)
+    })
+
+    file.upload.then(function (response) {
+      // $timeout(function () {
+      file.result = response.data
+      // })
+    }, function (response) {
+      if (response.status > 0) {
+        $scope.errorMsg = response.status + ': ' + response.data
+      }
     }, function (evt) {
-      var progressPercentage = parseInt(100.0 * evt.loaded / evt.total)
-      console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name)
+      // Math.min is to fix IE which reports 200% sometimes
+      file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total))
     })
   }
+  categoriesService.category().then(function (response) {
+    $scope.categories = response.data
+  })
 })
